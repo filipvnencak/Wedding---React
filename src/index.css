@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+* {
+  color: rgb(47, 46, 64);
+  margin-bottom: 10px;
+  font-family: "Pacifico";
+}
+html {
+  display: grid;
+  align-content: center;
+  place-items: center;
+}
+body {
+  text-align: center;
+  background-color: #fef6f1;
+}

@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 70vh;
+}
+.title {
+  font-size: 10vh;
+}
+@media all and (max-width: 499px) {
+  body {
+    max-width: fit-content;
+  }
+  .both {
+    width: 60vh;
+  }
+  iframe {
+    height: 100vh;
+    width: 50vh;
+  }
+  /* html {
+    width: 70vh;
+  }  */
+}
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 70vh;
+}
+#date {
+  font-size: 10vh;
+  background-color: #147d66;
+  width: 60vh;
+  border-radius: 3vh;
+  margin-top: 30px;
+  float: center;
+}
+#countDown {
+  font-size: 10vh;
+  margin-top: 20vh;
+  float: center;
+}
