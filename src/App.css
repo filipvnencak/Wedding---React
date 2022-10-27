@@ -39,7 +39,7 @@ section {
   margin-top: 30px;
   float: center;
 }
-#countDown {
+.countDown {
   font-size: 10vh;
   margin-top: 20vh;
   float: center;
