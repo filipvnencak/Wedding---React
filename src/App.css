@@ -44,3 +44,8 @@ section {
   margin-top: 20vh;
   float: center;
 }
+.link {
+  text-decoration: none;
+  margin-left: 10px;
+  color: #147d66;
+}
