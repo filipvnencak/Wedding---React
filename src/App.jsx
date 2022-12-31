@@ -8,21 +8,22 @@ import AboutUs from "./aboutus";
 export default function App() {
   return (
     <>
-      <Link className={"link"} to={"/home"}>
-        R&F
-      </Link>
-      <Link className={"link"} to={"/form"}>
-        Formulár
-      </Link>
-      <Link className={"link"} to={"/aboutus"}>
-        o Nás
-      </Link>
-      <Link className={"link"} to={"/game"}>
-        Game
-      </Link>
-
+      <div className="navBar">
+        <Link className={"link"} to={"/"}>
+          R&F
+        </Link>
+        <Link className={"link"} to={"/form"}>
+          Formulár
+        </Link>
+        <Link className={"link"} to={"/aboutus"}>
+          O nás
+        </Link>
+        <Link className={"link"} to={"/game"}>
+          Game
+        </Link>
+      </div>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
         <Route path="/form" element={<Form />} />
         <Route path="/aboutus" element={<AboutUs />} />
