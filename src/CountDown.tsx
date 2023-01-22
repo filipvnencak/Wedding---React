@@ -13,7 +13,7 @@ export default function useCountdown() {
   }, [countDownDate]);
   return getReturnValues(countDown);
 }
-const getReturnValues = (countDown) => {
+const getReturnValues = (countDown: any) => {
   const days = Math.floor(countDown / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
     (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)

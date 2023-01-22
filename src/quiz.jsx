@@ -1,8 +1,8 @@
 import React from "react";
-export default function Form() {
+export default function Quiz() {
   return (
     <section>
-      <div>This is Form</div>
+      <div>This is Quiz</div>
     </section>
   );
 }
