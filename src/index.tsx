@@ -12,11 +12,6 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const StyledSnackbarProvider = styled(SnackbarProvider)`
-  &..css-96yce9 .SnackbarItem-variantSuccess {
-    background-color: primary;
-  }
-`;
 const styles = {
   error: { backgroundColor: "blue", color: "orange" },
 };
