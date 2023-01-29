@@ -20,13 +20,10 @@ const RequestForm = () => {
   const { errors, handleInputValue, handleFormSubmit, formIsValid } =
     useFormControls();
 
-  console.log(kido);
-
   return (
     <FormControl onSubmit={() => handleFormSubmit()}>
       <Stack width={"130%"} mt={10}>
-        <Typography variant="subtitle1">Svadobný formulár :D </Typography>
-
+        <Typography variant="subtitle1">Svadobný formulár</Typography>
         <TextField
           fullWidth
           onBlur={handleInputValue}
@@ -74,7 +71,6 @@ const RequestForm = () => {
           })}
           sx={{ mb: "1vh" }}
         />
-
         <FormLabel id="demo-row-radio-buttons-group-label">
           Idem na hostinu autobusom?
         </FormLabel>
@@ -86,28 +82,33 @@ const RequestForm = () => {
           <FormControlLabel value={1} control={<Radio />} label="Áno" />
           <FormControlLabel value={0} control={<Radio />} label="Nie" />
         </RadioGroup>
-        <Box
-          sx={{
-            display: kido > 0 ? "block" : "grid",
-          }}
+        <Button
+          sx={{ mb: 3 }}
+          variant="contained"
+          onClick={() => setKido(kido + 1)}
         >
-          <Button variant="contained" onClick={() => setKido(kido + 1)}>
-            Pridať dieťa
-          </Button>
-
-          {kido > 0 && (
-            <Button variant="contained" onClick={() => setKido(kido - 1)}>
-              Ubrať dieťa
-            </Button>
-          )}
-        </Box>
-        <Typography>
-          {kido == 1
-            ? `Na hostinu idem s ${kido} dieťaťom`
-            : kido > 1
-            ? `Na hostinu idem s ${kido} deťmi`
-            : ""}
-        </Typography>
+          Pridať dieťa
+        </Button>{" "}
+        {/* <Button
+          sx={{ ml: 2, mb: 3 }}
+          variant="contained"
+          onClick={() => setKido(kido - 1)}
+        >
+          Ubrať dieťa
+        </Button> */}
+        {kido > 0 && (
+          <Typography>
+            Na hostinu idem s{" "}
+            <TextField
+              variant="standard"
+              size="small"
+              sx={{ minWidth: 3, maxWidth: 20, mb: 2, textAlign: "center" }}
+              value={kido}
+              onChange={(e) => setKido(+e.target.value)}
+            />
+            {kido > 1 ? " detmi" : " dieťaťom"}
+          </Typography>
+        )}
         {kido > 0 && (
           <TextField
             fullWidth
@@ -125,13 +126,21 @@ const RequestForm = () => {
           />
         )}
         {partner == 0 && (
-          <Button variant="contained" onClick={() => setPartner(1)}>
+          <Button
+            sx={{ mb: 2 }}
+            variant="contained"
+            onClick={() => setPartner(1)}
+          >
             Pridať partnera
           </Button>
         )}
         {partner != 0 && (
           <>
-            <Button variant="contained" onClick={() => setPartner(0)}>
+            <Button
+              sx={{ mb: 2 }}
+              variant="contained"
+              onClick={() => setPartner(0)}
+            >
               Ubrať partnera
             </Button>
             <TextField
@@ -177,7 +186,6 @@ const RequestForm = () => {
           })}
           sx={{ mb: "1vh" }}
         />
-
         <Button
           disabled={!formIsValid()}
           color="primary"

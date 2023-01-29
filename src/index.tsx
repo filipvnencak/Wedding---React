@@ -5,17 +5,30 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import ContextProvider from "./context";
+import { SnackbarProvider } from "notistack";
+import { styled } from "@mui/system";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const StyledSnackbarProvider = styled(SnackbarProvider)`
+  &..css-96yce9 .SnackbarItem-variantSuccess {
+    background-color: primary;
+  }
+`;
+const styles = {
+  error: { backgroundColor: "blue", color: "orange" },
+};
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ContextProvider>
-        <App />
-      </ContextProvider>
-    </BrowserRouter>
+    <SnackbarProvider anchorOrigin={{ horizontal: "right", vertical: "top" }}>
+      <BrowserRouter>
+        <ContextProvider>
+          <App />
+        </ContextProvider>
+      </BrowserRouter>{" "}
+    </SnackbarProvider>
   </React.StrictMode>
 );
 

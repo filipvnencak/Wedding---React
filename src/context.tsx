@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useSnackbar } from "notistack";
 
 export const Context = createContext({});
 
@@ -8,7 +10,9 @@ export const Axios = axios.create({
 });
 
 export const ContextProvider = ({ children }: any) => {
+  const { enqueueSnackbar } = useSnackbar();
   const [wait, setWait] = useState(false);
+  const navigate = useNavigate();
 
   const registerForm = async ({
     name,
@@ -48,6 +52,10 @@ export const ContextProvider = ({ children }: any) => {
         message,
       });
       setWait(false);
+      navigate("/");
+      enqueueSnackbar("Údaje boli úspešne uložené", {
+        variant: "success",
+      });
       return data;
     } catch (err) {
       setWait(false);
