@@ -3,9 +3,8 @@ import UseCountdown from "./CountDown";
 import { ReactSVG } from "react-svg";
 import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
+import loveImage from "./assets/svgs/undraw_love_is_in_the_air_re_lp58.svg";
 
-const loveImage =
-  require("./assets/svgs/undraw_love_is_in_the_air_re_lp58.svg") as string;
 export default function Home() {
   return (
     <>
@@ -20,8 +19,7 @@ export default function Home() {
           Radka& <br />
           Filip
         </Typography>
-        <ReactSVG src="./assets/svgs/undraw_love_is_in_the_air_re_lp58.svg" />
-        {/* <img src={loveImage} alt="love" /> */}
+        <img src={loveImage} alt="love" />
         <Typography
           p={"1.2vh"}
           fontFamily={"Pacifico"}
